@@ -18,6 +18,7 @@ gods.InitializeGod({
 
 gods.CreateOlympianSJSONData({
     godName = "Iris",
+    godType = "god",
     displayName = "Iris",
     subtitle = "Goddess of the Rainbow"
 })
