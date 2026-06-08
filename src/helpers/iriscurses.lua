@@ -24,5 +24,5 @@ function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
 
     print("[TC8GodMod] Iris curse rolled: " .. tostring(curse) .. " on " .. tostring(victim.ObjectId))
 
-    -- TODO: actually apply curse here once we confirm the hook works.
+    -- TODO: actually apply curse here once i confirm the hook works.
 end
