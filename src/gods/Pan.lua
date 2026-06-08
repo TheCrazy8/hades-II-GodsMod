@@ -36,6 +36,13 @@ gods.CreateBoon({
 
     reuseBaseIcons = true,
     boonIconPath = "Boon_Demeter_01"
+
+    ExtraFields = {
+        OnEnemyDamagedAction = {
+            FunctionName = "TC8GodMod.TryApplyPanic",
+            Args = {}
+        }
+    }
 })
 
 print("[TC8GodMod] Pan registered")
