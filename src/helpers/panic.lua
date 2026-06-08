@@ -1,6 +1,4 @@
 TC8GodMod = TC8GodMod or {}
-
-TC8GodMod = TC8GodMod or {}
 TC8GodMod.PanickedEnemies = {}
 
 function TC8GodMod.TryApplyPanic(triggerArgs)
