@@ -24,6 +24,9 @@ gods.CreateOlympianSJSONData({
     godType = "god",
     displayName = "Iris",
     subtitle = "Goddess of the Rainbow"
+    iconSpinPath = "Items\\Loot\\Boon\\HeraIconSpin\\HeraIconSpin",
+    previewPath = "Items\\Loot\\Boon\\HeraIconSpin\\HeraPreview",
+    boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Hera"
 })
 
 local function CreateIrisBoon(internalName, slot, displayName, description, icon)
