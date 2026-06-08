@@ -14,5 +14,5 @@ function TC8GodMod.TryApplyPanic(triggerArgs)
 
     TC8GodMod.PanickedEnemies[victim.ObjectId] = true
 
-    print("[TC8GodMod] Panic applied")
+    print("[TC8GodMod] Panic applied to " .. tostring(victim.ObjectId))
 end
