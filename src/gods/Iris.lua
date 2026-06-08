@@ -10,7 +10,10 @@ gods.InitializeGod({
     Gender = "Female",
 
     WeaponUpgrades = {
-        "IrisWeaponBoon"
+        "IrisWeaponBoon",
+        "IrisSpecialBoon",
+        "IrisCastBoon",
+        "IrisSprintBoon",
     },
 
     Traits = {}
@@ -23,24 +26,58 @@ gods.CreateOlympianSJSONData({
     subtitle = "Goddess of the Rainbow"
 })
 
-gods.CreateBoon({
-    characterName = "Iris",
-    internalBoonName = "IrisWeaponBoon",
+local function CreateIrisBoon(internalName, slot, displayName, description, icon)
+    gods.CreateBoon({
+        characterName = "Iris",
+        internalBoonName = internalName,
 
-    Slot = "Melee",
+        Slot = slot,
 
-    displayName = "Prism Break",
-    description = "Your Attack inflicts a random curse.",
+        displayName = displayName,
+        description = description,
 
-    reuseBaseIcons = true,
-    boonIconPath = "Boon_Hera_01",
+        reuseBaseIcons = true,
+        boonIconPath = icon,
 
-    ExtraFields = {
-        OnEnemyDamagedAction = {
-            FunctionName = "TC8GodMod.TryApplyRandomIrisCurse",
-            Args = {}
+        ExtraFields = {
+            OnEnemyDamagedAction = {
+                FunctionName = "TC8GodMod.TryApplyRandomIrisCurse",
+                Args = {}
+            }
         }
-    }
-})
+    })
+end
+
+CreateIrisBoon(
+    "IrisWeaponBoon",
+    "Melee",
+    "Iris' Strike",
+    "Your Attack inflicts a random curse.",
+    "Boon_Hera_01"
+)
+
+CreateIrisBoon(
+    "IrisSpecialBoon",
+    "Secondary",
+    "Iris' Flourish",
+    "Your Special inflicts a random curse.",
+    "Boon_Hera_02"
+)
+
+CreateIrisBoon(
+    "IrisCastBoon",
+    "Ranged",
+    "Iris' Ring",
+    "Your Cast inflicts a random curse.",
+    "Boon_Hera_03"
+)
+
+CreateIrisBoon(
+    "IrisSprintBoon",
+    "Rush",
+    "Iris' Sprint",
+    "Your Sprint inflicts a random curse.",
+    "Boon_Hera_04"
+)
 
 print("[TC8GodMod] Iris registered")
