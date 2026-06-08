@@ -16,7 +16,3 @@ function TC8GodMod.TryApplyPanic(triggerArgs)
 
     print("[TC8GodMod] Panic applied")
 end
-
-function TC8GodMod.TryApplyPanic(triggerArgs)
-    print("[TC8GodMod] Panic hook fired")
-end
