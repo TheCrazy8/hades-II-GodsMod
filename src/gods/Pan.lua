@@ -24,9 +24,17 @@ gods.CreateOlympianSJSONData({
     godType = "god",
     displayName = "Pan",
     subtitle = "God of the Wilds",
-    iconSpinPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterIconSpin",
+
+    iconPathOverrides = {
+        previewPath = true,
+        iconSpinPath = true,
+        boonSelectSymbolPath = true,
+    },
+
     previewPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterPreview",
+    iconSpinPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterIconSpin",
     boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Demeter",
+
     colorA = { Red = 0.25, Green = 0.75, Blue = 0.25 },
     colorB = { Red = 0.15, Green = 0.45, Blue = 0.12 },
     colorC = { Red = 0.35, Green = 0.95, Blue = 0.45 },
