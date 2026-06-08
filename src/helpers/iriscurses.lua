@@ -3,10 +3,10 @@
 TC8GodMod = TC8GodMod or {}
 
 TC8GodMod.IrisCursePool = {
-    "Freeze",
-    "Scorch",
-    "Daze",
-    "Weak"
+    "PLACEHOLDER_FREEZE",
+    "PLACEHOLDER_SCORCH",
+    "PLACEHOLDER_DAZE",
+    "PLACEHOLDER_WEAK"
 }
 
 function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
@@ -20,7 +20,25 @@ function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
         return
     end
 
-    local curse = TC8GodMod.IrisCursePool[RandomInt(1, #TC8GodMod.IrisCursePool)]
+    local curse =
+        TC8GodMod.IrisCursePool[
+            RandomInt(1, #TC8GodMod.IrisCursePool)
+        ]
 
-    print("[TC8GodMod] Iris curse rolled: " .. tostring(curse) .. " on " .. tostring(victim.ObjectId))
+    print(
+        "[TC8GodMod] Applying Iris curse " ..
+        tostring(curse) ..
+        " to " ..
+        tostring(victim.ObjectId)
+    )
+
+    -- TODO:
+    -- Replace placeholder names with actual Hades II effect names.
+
+    ApplyEffect({
+        DestinationId = victim.ObjectId,
+        Id = victim.ObjectId,
+        EffectName = curse,
+        DataProperties = {}
+    })
 end
