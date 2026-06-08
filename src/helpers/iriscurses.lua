@@ -25,6 +25,13 @@ function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
             RandomInt(1, #TC8GodMod.IrisCursePool)
         ]
 
+    ApplyEffect({
+        DestinationId = victim.ObjectId,
+        Id = victim.ObjectId,
+        EffectName = curse,
+        DataProperties = {}
+    })
+
     print(
         "[TC8GodMod] Applying Iris curse " ..
         tostring(curse) ..
