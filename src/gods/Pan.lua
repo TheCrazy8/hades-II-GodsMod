@@ -35,7 +35,7 @@ gods.CreateBoon({
     description = "Your Attack inflicts Panic.",
 
     reuseBaseIcons = true,
-    boonIconPath = "Boon_Demeter_01"
+    boonIconPath = "Boon_Demeter_01",
 
     ExtraFields = {
         OnEnemyDamagedAction = {
