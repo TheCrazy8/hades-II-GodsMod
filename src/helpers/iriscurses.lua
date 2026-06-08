@@ -23,6 +23,4 @@ function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
     local curse = TC8GodMod.IrisCursePool[RandomInt(1, #TC8GodMod.IrisCursePool)]
 
     print("[TC8GodMod] Iris curse rolled: " .. tostring(curse) .. " on " .. tostring(victim.ObjectId))
-
-    -- TODO: actually apply curse here once i confirm the hook works.
 end
