@@ -28,7 +28,7 @@ gods.CreateBoon({
 
     Slot = "Melee",
 
-    displayName = "Iris' Strike",
+    displayName = "Prism Break",
     description = "Your Attack inflicts a random curse.",
 
     reuseBaseIcons = true,
