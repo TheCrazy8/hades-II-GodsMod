@@ -1,0 +1,12 @@
+{
+  "name": "TC8's GodMod",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/TheCrazy8/hades-II-GodsMod",
+  "description": "Adds new Olympian gods including Pan and Iris.",
+  "dependencies": [
+    "SGG_Modding-ModUtil-4.0.1",
+    "SGG_Modding-ReLoad-1.0.2",
+    "LuaENVY-ENVY-1.2.0",
+    "zannc-GodsAPI-2.1.5"
+  ]
+}
