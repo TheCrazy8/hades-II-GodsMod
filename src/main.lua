@@ -48,6 +48,7 @@ local function on_ready()
 
     SafeImport("helpers/Text.lua")
     SafeImport("helpers/Panic.lua")
+    SafeImport("helpers/IrisCurses.lua")
 
     SafeImport("gods/Pan.lua")
     SafeImport("gods/Iris.lua")
