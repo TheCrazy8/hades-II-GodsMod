@@ -10,8 +10,11 @@ gods.InitializeGod({
     godType = "GOD",
     Gender = "Male",
     WeaponUpgrades = {
-        "PanWeaponBoon"
-    },
+        "PanWeaponBoon",
+        "PanSpecialBoon",
+        "PanCastBoon",
+        "PanSprintBoon",
+    }
 
     Traits = {}
 })
