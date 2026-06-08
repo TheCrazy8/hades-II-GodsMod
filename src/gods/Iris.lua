@@ -54,7 +54,7 @@ end
 CreateIrisBoon(
     "IrisWeaponBoon",
     "Melee",
-    "Iris' Strike",
+    "Prism Break",
     "Your Attack inflicts a random curse.",
     "Boon_Hera_01"
 )
@@ -62,7 +62,7 @@ CreateIrisBoon(
 CreateIrisBoon(
     "IrisSpecialBoon",
     "Secondary",
-    "Iris' Flourish",
+    "Chroma Crash",
     "Your Special inflicts a random curse.",
     "Boon_Hera_02"
 )
@@ -70,7 +70,7 @@ CreateIrisBoon(
 CreateIrisBoon(
     "IrisCastBoon",
     "Ranged",
-    "Iris' Ring",
+    "Shimmering Magic",
     "Your Cast inflicts a random curse.",
     "Boon_Hera_03"
 )
@@ -78,7 +78,7 @@ CreateIrisBoon(
 CreateIrisBoon(
     "IrisSprintBoon",
     "Rush",
-    "Iris' Sprint",
+    "Rainbow Rush",
     "Your Sprint inflicts a random curse.",
     "Boon_Hera_04"
 )
