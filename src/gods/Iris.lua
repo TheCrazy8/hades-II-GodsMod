@@ -11,6 +11,9 @@ gods.InitializeGod({
 
     WeaponUpgrades = {
         "IrisWeaponBoon",
+        "IrisSpecialBoon",
+        "IrisCastBoon",
+        "IrisSprintBoon",
     },
 
     Traits = {}
