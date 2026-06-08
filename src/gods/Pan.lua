@@ -9,7 +9,7 @@ gods.InitializeGod({
     godName = "Pan",
     godType = "GOD",
     Gender = "Male",
-
+    subtitle = "God of the Wilds"
     WeaponUpgrades = {
         "PanWeaponBoon"
     },
