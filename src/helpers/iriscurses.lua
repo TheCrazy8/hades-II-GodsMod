@@ -3,10 +3,10 @@
 TC8GodMod = TC8GodMod or {}
 
 TC8GodMod.IrisCursePool = {
-    "PLACEHOLDER_FREEZE",
-    "PLACEHOLDER_SCORCH",
-    "PLACEHOLDER_DAZE",
-    "PLACEHOLDER_WEAK"
+    "WeakPrimary",
+    "BlindPrimary",
+    "BurnPrimary",
+    "ChillPrimary",
 }
 
 function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
