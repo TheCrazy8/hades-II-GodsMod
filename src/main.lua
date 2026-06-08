@@ -16,10 +16,11 @@ local reload = mods["SGG_Modding-ReLoad"]
 
 gods = mods["zannc-GodsAPI"].auto()
 
-IrisPanGods = IrisPanGods or {}
+TC8GodMod = TC8GodMod or {}
+TC8GodMod.GodsAPI = gods
 
 local function Log(message)
-    print("[IrisPanGods] " .. tostring(message))
+    print("[TC8GodMod] " .. tostring(message))
 end
 
 local function SafeImport(path)
@@ -37,25 +38,21 @@ local function SafeImport(path)
 end
 
 local function on_ready()
-    Log("Loading mod")
+    Log("Loading TC8's GodMod")
 
     if modutil ~= nil and modutil.mod ~= nil and modutil.mod.Mod ~= nil then
         mod = modutil.mod.Mod.Register(_PLUGIN.guid)
     end
 
-    IrisPanGods.GodsAPI = gods
-
     import_as_fallback(rom.game)
 
-    -- Helpers first
     SafeImport("helpers/Text.lua")
     SafeImport("helpers/Panic.lua")
 
-    -- Gods after helpers
     SafeImport("gods/Pan.lua")
     SafeImport("gods/Iris.lua")
 
-    Log("Finished loading mod")
+    Log("Finished loading TC8's GodMod")
 end
 
 local function on_reload()
