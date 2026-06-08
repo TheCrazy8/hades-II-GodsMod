@@ -8,11 +8,14 @@ function TC8GodMod.TryApplyPanic(triggerArgs)
 
     local victim = triggerArgs.TriggeredByTable
 
-    if victim == nil then
+    if victim == nil or victim.ObjectId == nil then
         return
     end
 
-    TC8GodMod.PanickedEnemies[victim.ObjectId] = true
+    TC8GodMod.PanickedEnemies[victim.ObjectId] = {
+        TargetEnemies = true,
+        ExpireTime = _worldTime + 4
+    }
 
     print("[TC8GodMod] Panic applied to " .. tostring(victim.ObjectId))
 end
