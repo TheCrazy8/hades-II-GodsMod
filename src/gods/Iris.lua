@@ -93,4 +93,25 @@ CreateIrisBoon(
     "Boon_Hera_04"
 )
 
+local function EnsureTraitAlias(name)
+    if TraitData[name] ~= nil then
+        return
+    end
+
+    for traitName, traitData in pairs(TraitData) do
+        if type(traitName) == "string" and traitName:sub(-#name) == name then
+            TraitData[name] = traitData
+            print("[TC8GodMod] Aliased " .. name .. " to " .. traitName)
+            return
+        end
+    end
+
+    print("[TC8GodMod] WARNING: could not alias " .. name)
+end
+
+EnsureTraitAlias("IrisWeaponBoon")
+EnsureTraitAlias("IrisSpecialBoon")
+EnsureTraitAlias("IrisCastBoon")
+EnsureTraitAlias("IrisSprintBoon")
+
 print("[TC8GodMod] Iris registered")
