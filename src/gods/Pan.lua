@@ -24,6 +24,9 @@ gods.CreateOlympianSJSONData({
     godType = "god",
     displayName = "Pan",
     subtitle = "God of the Wilds"
+    iconSpinPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterIconSpin",
+    previewPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterPreview",
+    boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Demeter"
 })
 
 local function CreatePanBoon(internalName, slot, displayName, description, icon)
@@ -51,7 +54,7 @@ end
 CreatePanBoon(
     "PanWeaponBoon",
     "Melee",
-    "Pan's Strike",
+    "Wild Strike",
     "Your Attack inflicts Panic.",
     "Boon_Demeter_01"
 )
@@ -59,7 +62,7 @@ CreatePanBoon(
 CreatePanBoon(
     "PanSpecialBoon",
     "Secondary",
-    "Pan's Flourish",
+    "Flourish",
     "Your Special inflicts Panic.",
     "Boon_Demeter_02"
 )
@@ -67,7 +70,7 @@ CreatePanBoon(
 CreatePanBoon(
     "PanCastBoon",
     "Ranged",
-    "Pan's Melody",
+    "Ancient Melody",
     "Your Cast inflicts Panic.",
     "Boon_Demeter_03"
 )
@@ -75,7 +78,7 @@ CreatePanBoon(
 CreatePanBoon(
     "PanSprintBoon",
     "Rush",
-    "Pan's Dance",
+    "Wild Dance",
     "Your Sprint inflicts Panic.",
     "Boon_Demeter_04"
 )
