@@ -47,8 +47,8 @@ local function on_ready()
     import_as_fallback(rom.game)
 
     SafeImport("helpers/Text.lua")
-    SafeImport("helpers/Panic.lua")
-    SafeImport("helpers/IrisCurses.lua")
+    SafeImport("helpers/panic.lua")
+    SafeImport("helpers/iriscurses.lua")
 
     SafeImport("gods/Pan.lua")
     SafeImport("gods/Iris.lua")
