@@ -23,7 +23,7 @@ gods.CreateOlympianSJSONData({
     godName = "Pan",
     godType = "god",
     displayName = "Pan",
-    subtitle = "God of the Wilds"
+    subtitle = "God of the Wilds",
     iconSpinPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterIconSpin",
     previewPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterPreview",
     boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Demeter"
