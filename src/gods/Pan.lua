@@ -31,7 +31,7 @@ gods.CreateBoon({
 
     Slot = "Melee",
 
-    displayName = "Pan's Strike",
+    displayName = "Wild Strike",
     description = "Your Attack inflicts Panic.",
 
     reuseBaseIcons = true,
