@@ -9,7 +9,6 @@ gods.InitializeGod({
     godName = "Pan",
     godType = "GOD",
     Gender = "Male",
-    subtitle = "God of the Wilds"
     WeaponUpgrades = {
         "PanWeaponBoon"
     },
@@ -20,6 +19,7 @@ gods.InitializeGod({
 -- Create the god's UI data
 gods.CreateOlympianSJSONData({
     godName = "Pan",
+    godType = "god",
     displayName = "Pan",
     subtitle = "God of the Wilds"
 })
