@@ -94,4 +94,25 @@ CreatePanBoon(
     "Boon_Demeter_04"
 )
 
+local function EnsureTraitAlias(name)
+    if TraitData[name] ~= nil then
+        return
+    end
+
+    for traitName, traitData in pairs(TraitData) do
+        if type(traitName) == "string" and traitName:sub(-#name) == name then
+            TraitData[name] = traitData
+            print("[TC8GodMod] Aliased " .. name .. " to " .. traitName)
+            return
+        end
+    end
+
+    print("[TC8GodMod] WARNING: could not alias " .. name)
+end
+
+EnsureTraitAlias("PanWeaponBoon")
+EnsureTraitAlias("PanSpecialBoon")
+EnsureTraitAlias("PanCastBoon")
+EnsureTraitAlias("PanSprintBoon")
+
 print("[TC8GodMod] Pan registered")
