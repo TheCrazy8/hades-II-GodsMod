@@ -4,6 +4,15 @@ local gods = TC8GodMod.GodsAPI
 
 print("[TC8GodMod] Registering Iris")
 
+local function AssetPath(path)
+    -- deppth output says to use rom.path.combine(_PLUGIN.guid, "iris\\...")
+    if rom ~= nil and rom.path ~= nil and rom.path.combine ~= nil then
+        return rom.path.combine(_PLUGIN.guid, path)
+    end
+
+    return path
+end
+
 gods.InitializeGod({
     godName = "Iris",
     godType = "GOD",
@@ -26,12 +35,14 @@ gods.CreateOlympianSJSONData({
     subtitle = "Goddess of the Rainbow",
 
     iconPathOverrides = {
+        previewPath = true,
+        iconSpinPath = true,
         boonSelectSymbolPath = true,
     },
 
-    previewPath = "Items\\Loot\\Boon\\HeraIconSpin\\HeraPreview",
-    iconSpinPath = "Items\\Loot\\Boon\\HeraIconSpin\\HeraIconSpin",
-    boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Hera",
+    previewPath = AssetPath("iris\\preview"),
+    iconSpinPath = AssetPath("iris\\iconSpin"),
+    boonSelectSymbolPath = AssetPath("iris\\iconSpin"),
 
     colorA = { Red = 0.85, Green = 0.35, Blue = 1.00 },
     colorB = { Red = 0.35, Green = 0.20, Blue = 0.75 },
@@ -71,7 +82,7 @@ local function PatchIrisHook(internalName)
     print("[TC8GodMod] Patched Iris curse hook onto " .. internalName)
 end
 
-local function CreateIrisBoon(internalName, slot, displayName, description, icon)
+local function CreateIrisBoon(internalName, slot, displayName, description, iconPath)
     gods.CreateBoon({
         characterName = "Iris",
         internalBoonName = internalName,
@@ -81,8 +92,8 @@ local function CreateIrisBoon(internalName, slot, displayName, description, icon
         displayName = displayName,
         description = description,
 
-        reuseBaseIcons = true,
-        boonIconPath = icon,
+        reuseBaseIcons = false,
+        boonIconPath = AssetPath(iconPath),
     })
 
     PatchIrisHook(internalName)
@@ -93,7 +104,7 @@ CreateIrisBoon(
     "Melee",
     "Prism Break",
     "Your Attack inflicts a random curse.",
-    "Boon_Hera_01"
+    "iris\\boon_attack"
 )
 
 CreateIrisBoon(
@@ -101,7 +112,7 @@ CreateIrisBoon(
     "Secondary",
     "Chroma Crash",
     "Your Special inflicts a random curse.",
-    "Boon_Hera_02"
+    "iris\\boon_special"
 )
 
 CreateIrisBoon(
@@ -109,7 +120,7 @@ CreateIrisBoon(
     "Ranged",
     "Shimmering Magic",
     "Your Cast inflicts a random curse.",
-    "Boon_Hera_03"
+    "iris\\boon_cast"
 )
 
 CreateIrisBoon(
@@ -117,7 +128,7 @@ CreateIrisBoon(
     "Rush",
     "Rainbow Rush",
     "Your Sprint inflicts a random curse.",
-    "Boon_Hera_04"
+    "iris\\boon_sprint"
 )
 
 print("[TC8GodMod] Iris registered")
