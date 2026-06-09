@@ -7,15 +7,26 @@ TC8GodMod.IrisCursePool = {
     "ChillPrimary",
 }
 
-function TC8GodMod.TryApplyRandomIrisCurse(triggerArgs)
+function TC8GodMod.TryApplyRandomIrisCurse(victim, triggerArgs)
     print("[TC8GodMod] Iris curse hook fired")
 
-    if triggerArgs == nil then
-        print("[TC8GodMod] triggerArgs is nil")
+    if victim == nil and triggerArgs ~= nil then
+        victim = triggerArgs.TriggeredByTable or triggerArgs.Victim or triggerArgs.Target
+    end
+
+    if victim == nil or victim.ObjectId == nil then
+        print("[TC8GodMod] Iris curse failed: no victim")
         return
     end
 
-    for key, value in pairs(triggerArgs) do
-        print("[TC8GodMod] triggerArgs key: " .. tostring(key) .. " = " .. tostring(value))
-    end
+    local curse = TC8GodMod.IrisCursePool[RandomInt(1, #TC8GodMod.IrisCursePool)]
+
+    print("[TC8GodMod] Applying Iris curse " .. tostring(curse) .. " to " .. tostring(victim.ObjectId))
+
+    ApplyEffect({
+        DestinationId = victim.ObjectId,
+        Id = victim.ObjectId,
+        EffectName = curse,
+        DataProperties = {}
+    })
 end
