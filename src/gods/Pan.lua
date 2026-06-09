@@ -26,8 +26,6 @@ gods.CreateOlympianSJSONData({
     subtitle = "God of the Wilds",
 
     iconPathOverrides = {
-        previewPath = true,
-        iconSpinPath = true,
         boonSelectSymbolPath = true,
     },
 
