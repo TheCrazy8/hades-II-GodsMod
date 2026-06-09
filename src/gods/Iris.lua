@@ -52,11 +52,10 @@ local function CreateIrisBoon(internalName, slot, displayName, description, icon
         reuseBaseIcons = true,
         boonIconPath = icon,
 
-        ExtraFields = {
-            OnEnemyDamagedAction = {
-                FunctionName = "TC8GodMod.TryApplyRandomIrisCurse",
-                Args = {}
-            }
+
+        OnEnemyDamagedAction = {
+            FunctionName = "TC8GodMod.TryApplyRandomIrisCurse",
+            Args = {}
         }
     })
 end
