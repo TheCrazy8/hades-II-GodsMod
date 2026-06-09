@@ -40,6 +40,39 @@ gods.CreateOlympianSJSONData({
     colorC = { Red = 0.35, Green = 0.95, Blue = 0.45 },
 })
 
+local function EnsureTraitAlias(name)
+    if TraitData[name] ~= nil then
+        return TraitData[name]
+    end
+
+    for traitName, traitData in pairs(TraitData) do
+        if type(traitName) == "string" and traitName:sub(-#name) == name then
+            TraitData[name] = traitData
+            print("[TC8GodMod] Aliased " .. name .. " to " .. traitName)
+            return traitData
+        end
+    end
+
+    print("[TC8GodMod] WARNING: could not alias " .. name)
+    return nil
+end
+
+local function PatchPanHook(internalName)
+    local trait = EnsureTraitAlias(internalName)
+
+    if trait == nil then
+        print("[TC8GodMod] WARNING: could not patch Pan hook for " .. internalName)
+        return
+    end
+
+    trait.OnEnemyDamagedAction = {
+        FunctionName = "TC8GodMod.TryApplyPanic",
+        Args = {}
+    }
+
+    print("[TC8GodMod] Patched Pan panic hook onto " .. internalName)
+end
+
 local function CreatePanBoon(internalName, slot, displayName, description, icon)
     gods.CreateBoon({
         characterName = "Pan",
@@ -52,14 +85,9 @@ local function CreatePanBoon(internalName, slot, displayName, description, icon)
 
         reuseBaseIcons = true,
         boonIconPath = icon,
-
-        ExtraFields = {
-            OnEnemyDamagedAction = {
-                FunctionName = "TC8GodMod.TryApplyPanic",
-                Args = {}
-            }
-        }
     })
+
+    PatchPanHook(internalName)
 end
 
 CreatePanBoon(
@@ -93,26 +121,5 @@ CreatePanBoon(
     "Your Sprint inflicts Panic.",
     "Boon_Demeter_04"
 )
-
-local function EnsureTraitAlias(name)
-    if TraitData[name] ~= nil then
-        return
-    end
-
-    for traitName, traitData in pairs(TraitData) do
-        if type(traitName) == "string" and traitName:sub(-#name) == name then
-            TraitData[name] = traitData
-            print("[TC8GodMod] Aliased " .. name .. " to " .. traitName)
-            return
-        end
-    end
-
-    print("[TC8GodMod] WARNING: could not alias " .. name)
-end
-
-EnsureTraitAlias("PanWeaponBoon")
-EnsureTraitAlias("PanSpecialBoon")
-EnsureTraitAlias("PanCastBoon")
-EnsureTraitAlias("PanSprintBoon")
 
 print("[TC8GodMod] Pan registered")
