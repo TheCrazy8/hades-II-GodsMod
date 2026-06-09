@@ -26,8 +26,6 @@ gods.CreateOlympianSJSONData({
     subtitle = "Goddess of the Rainbow",
 
     iconPathOverrides = {
-        previewPath = true,
-        iconSpinPath = true,
         boonSelectSymbolPath = true,
     },
 
