@@ -4,6 +4,14 @@ local gods = TC8GodMod.GodsAPI
 
 print("[TC8GodMod] Registering Pan")
 
+local function AssetPath(path)
+    if rom ~= nil and rom.path ~= nil and rom.path.combine ~= nil then
+        return rom.path.combine(_PLUGIN.guid, path)
+    end
+
+    return path
+end
+
 gods.InitializeGod({
     godName = "Pan",
     godType = "GOD",
@@ -26,12 +34,14 @@ gods.CreateOlympianSJSONData({
     subtitle = "God of the Wilds",
 
     iconPathOverrides = {
+        previewPath = true,
+        iconSpinPath = true,
         boonSelectSymbolPath = true,
     },
 
-    previewPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterPreview",
-    iconSpinPath = "Items\\Loot\\Boon\\DemeterIconSpin\\DemeterIconSpin",
-    boonSelectSymbolPath = "GUI\\Screens\\BoonIcons\\Demeter",
+    previewPath = AssetPath("pan\\preview"),
+    iconSpinPath = AssetPath("pan\\iconSpin"),
+    boonSelectSymbolPath = AssetPath("pan\\iconSpin"),
 
     colorA = { Red = 0.25, Green = 0.75, Blue = 0.25 },
     colorB = { Red = 0.15, Green = 0.45, Blue = 0.12 },
@@ -71,7 +81,7 @@ local function PatchPanHook(internalName)
     print("[TC8GodMod] Patched Pan panic hook onto " .. internalName)
 end
 
-local function CreatePanBoon(internalName, slot, displayName, description, icon)
+local function CreatePanBoon(internalName, slot, displayName, description, iconPath)
     gods.CreateBoon({
         characterName = "Pan",
         internalBoonName = internalName,
@@ -81,8 +91,8 @@ local function CreatePanBoon(internalName, slot, displayName, description, icon)
         displayName = displayName,
         description = description,
 
-        reuseBaseIcons = true,
-        boonIconPath = icon,
+        reuseBaseIcons = false,
+        boonIconPath = AssetPath(iconPath),
     })
 
     PatchPanHook(internalName)
@@ -93,7 +103,7 @@ CreatePanBoon(
     "Melee",
     "Wild Strike",
     "Your Attack inflicts Panic.",
-    "Boon_Demeter_01"
+    "pan\\boon_attack"
 )
 
 CreatePanBoon(
@@ -101,7 +111,7 @@ CreatePanBoon(
     "Secondary",
     "Flourish",
     "Your Special inflicts Panic.",
-    "Boon_Demeter_02"
+    "pan\\boon_special"
 )
 
 CreatePanBoon(
@@ -109,7 +119,7 @@ CreatePanBoon(
     "Ranged",
     "Ancient Melody",
     "Your Cast inflicts Panic.",
-    "Boon_Demeter_03"
+    "pan\\boon_cast"
 )
 
 CreatePanBoon(
@@ -117,7 +127,7 @@ CreatePanBoon(
     "Rush",
     "Wild Dance",
     "Your Sprint inflicts Panic.",
-    "Boon_Demeter_04"
+    "pan\\boon_sprint"
 )
 
 print("[TC8GodMod] Pan registered")
