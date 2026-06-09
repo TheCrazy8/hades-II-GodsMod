@@ -43,10 +43,10 @@ gods.CreateOlympianSJSONData({
     iconSpinPath = AssetPath("pan\\iconSpin"),
     boonSelectSymbolPath = AssetPath("pan\\iconSpin"),
 
-    colorA = { Red = 0.25, Green = 0.75, Blue = 0.25 },
-    colorB = { Red = 0.15, Green = 0.45, Blue = 0.12 },
-    colorC = { Red = 0.35, Green = 0.95, Blue = 0.45 },
-})
+    colorA = { Red = 0.35, Green = 0.85, Blue = 0.25 },
+    colorB = { Red = 0.10, Green = 0.40, Blue = 0.08 },
+    colorC = { Red = 0.80, Green = 1.00, Blue = 0.55 },
+    })
 
 local function EnsureTraitAlias(name)
     if TraitData[name] ~= nil then
