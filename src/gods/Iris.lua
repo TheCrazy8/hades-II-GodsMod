@@ -75,8 +75,8 @@ local function PatchIrisHook(internalName)
     end
 
     trait.OnEnemyDamagedAction = {
-        FunctionName = "TC8GodMod.TryApplyRandomIrisCurse",
-        Args = {}
+        FunctionName = _PLUGIN.guid .. ".TryApplyRandomIrisCurse",
+        FunctionArgs = {}
     }
 
     print("[TC8GodMod] Patched Iris curse hook onto " .. internalName)
