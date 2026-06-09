@@ -44,9 +44,9 @@ gods.CreateOlympianSJSONData({
     iconSpinPath = AssetPath("iris\\iconSpin"),
     boonSelectSymbolPath = AssetPath("iris\\iconSpin"),
 
-    colorA = { Red = 0.85, Green = 0.35, Blue = 1.00 },
-    colorB = { Red = 0.35, Green = 0.20, Blue = 0.75 },
-    colorC = { Red = 0.95, Green = 0.75, Blue = 1.00 },
+    colorA = { Red = 1.00, Green = 0.35, Blue = 0.90 },
+    colorB = { Red = 0.25, Green = 0.35, Blue = 1.00 },
+    colorC = { Red = 1.00, Green = 0.95, Blue = 0.50 },
 })
 
 local function EnsureTraitAlias(name)
